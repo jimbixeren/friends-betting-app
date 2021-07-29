@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Local="clr-namespace:friends_betting_app"
+             x:Class="friends_betting_app.MainPage">
+
+
+    <ContentPage.BindingContext>
+        <Local:EmployeeListViewModel/>
+
+
+    </ContentPage.BindingContext>
+    
+    
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Entry Placeholder="Employee Name" Text="{Binding EmployeeName }"></Entry>
+            <Button Text="Add" Command="{Binding AddEmployeeCommand}"></Button>
+            <Button Text="Remove" Command="{Binding RemoveEmployeeCommand}"></Button>
+
+            <ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}">
+                
+                               
+            </ListView>
+            
+            
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+
+</ContentPage>
